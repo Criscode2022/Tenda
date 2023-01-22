@@ -1,0 +1,208 @@
+
+        * {
+
+            box-sizing: border-box;
+        }
+
+        header {
+        
+            background-image: url(fondocabecera.jpg);
+            color: white;
+            text-align: center;
+            padding-bottom: 0pt;
+            font-size: larger;
+            font-weight:bolder ;
+            margin-bottom: 20pt;
+            padding-top: 0%;
+
+    
+        }
+
+        #novidadesMain {
+
+            margin-bottom: 20pt;
+        }
+
+
+        body {
+            background-color: rgb(223, 167, 94);
+            margin: 0%;
+
+        }
+
+        img {
+
+        transition: all .3s ease-in-out;
+        height: 400px;
+        max-width: 266px;
+        margin-bottom: 30pt;
+
+        }
+
+        #flechaIzq {
+
+            filter: brightness(1.1);
+            mix-blend-mode: multiply;
+
+        }
+
+        #flechaDer {
+
+            filter: brightness(1.1);
+            mix-blend-mode: multiply;
+        }
+
+        img:hover {
+
+            transform: scale(1.1);
+            
+        }
+
+        footer {
+
+            margin: 30pt;
+        }
+
+        nav {
+
+            padding: 0%;
+        }
+
+        h2 {
+margin-left: 30pt;
+            text-decoration: underline;
+            justify-content: center;
+            margin-bottom: 40pt;
+        }
+
+        #novidadesDiv {
+            display: flex;
+            gap: 70pt;
+        margin-left: 30pt;
+            justify-content:space-between;
+          
+        }
+
+        h1 {
+            padding-top: 25pt;
+            margin-bottom: 15pt;
+        }
+
+        #listacategorias {
+            font-size: 40pt;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 20pt;
+            padding-right: 20pt;
+        }
+
+        #listacategorias li:hover
+        
+        {
+background-color: yellow;
+color: white;
+
+        }
+
+        #barrabuscar {
+
+            width: 100%;
+        }
+
+        #listacategorias li {
+
+        list-style: none;
+
+        }
+
+
+        
+
+        #busqueda {
+        
+            text-align: right;
+            margin-right: 20pt;
+        
+        }
+        #busqueda h2 {
+        
+        text-align: center;
+    
+    }
+
+    .nav-item {
+        gap: 20pt;
+
+        color: white;
+
+    }
+
+.navbar navbar-dark bg-dark {
+
+padding: 0%;
+margin: 0%;
+
+}
+
+
+
+#categorias li {
+
+padding-left: 40pt;
+
+}
+
+#listacategorias li {
+
+padding-right: 30pt;
+padding-left: 30pt;
+margin: 30pt;
+border: solid blue 5pt;
+
+}
+
+a {
+
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+    #novidadesDiv {
+            display: flex;
+            flex-direction: column;
+            gap: 70pt;
+        margin-left: 30pt;
+            justify-content:space-between;
+            
+          
+        }
+
+        #listacategorias {
+            font-size: 40pt;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-left: 20pt;
+            padding-right: 20pt;
+        }
+
+        #flechaIzq {
+
+            filter: brightness(1.1);
+            mix-blend-mode: multiply;
+            height: 200px;
+            width: 266px;
+
+        }
+
+        #flechaDer {
+
+            filter: brightness(1.1);
+            mix-blend-mode: multiply;
+            height: 200px;
+            width: 266px;
+        }
+
+        
+}

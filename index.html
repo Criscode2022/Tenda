@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="GL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A miña tenda</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.min.js"></script>
+    <style>
+
+* {
+
+box-sizing: border-box;
+}
+
+header {
+
+background-image: url(fondocabecera.jpg);
+color: white;
+text-align: center;
+padding-bottom: 0pt;
+font-size: larger;
+font-weight:bolder ;
+margin-bottom: 20pt;
+padding-top: 0%;
+
+
+}
+
+#novidadesMain {
+
+margin-bottom: 20pt;
+}
+
+
+body {
+background-color: rgb(223, 167, 94);
+margin: 0%;
+
+}
+
+img {
+
+transition: all .3s ease-in-out;
+height: 400px;
+max-width: 266px;
+margin-bottom: 30pt;
+
+}
+
+#flechaIzq {
+
+filter: brightness(1.1);
+mix-blend-mode: multiply;
+
+}
+
+#flechaDer {
+
+filter: brightness(1.1);
+mix-blend-mode: multiply;
+}
+
+img:hover {
+
+transform: scale(1.1);
+
+}
+
+footer {
+
+margin: 30pt;
+}
+
+nav {
+
+padding: 0%;
+}
+
+h2 {
+margin-left: 30pt;
+text-decoration: underline;
+justify-content: center;
+margin-bottom: 40pt;
+}
+
+#novidadesDiv {
+display: flex;
+gap: 70pt;
+margin-left: 30pt;
+justify-content:space-between;
+
+}
+
+h1 {
+padding-top: 25pt;
+margin-bottom: 15pt;
+}
+
+#listacategorias {
+font-size: 40pt;
+display: flex;
+justify-content: space-between;
+padding-left: 20pt;
+padding-right: 20pt;
+}
+
+#listacategorias li:hover
+
+{
+background-color: yellow;
+color: white;
+
+}
+
+#barrabuscar {
+
+width: 100%;
+}
+
+#listacategorias li {
+
+list-style: none;
+
+}
+
+
+
+
+#busqueda {
+
+text-align: right;
+margin-right: 20pt;
+
+}
+#busqueda h2 {
+
+text-align: center;
+
+}
+
+.nav-item {
+gap: 20pt;
+
+color: white;
+
+}
+
+.navbar navbar-dark bg-dark {
+
+padding: 0%;
+margin: 0%;
+
+}
+
+
+
+#categorias li {
+
+padding-left: 40pt;
+
+}
+
+#listacategorias li {
+
+padding-right: 30pt;
+padding-left: 30pt;
+margin: 30pt;
+border: solid blue 5pt;
+
+}
+
+a {
+
+text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+#novidadesDiv {
+display: flex;
+flex-direction: column;
+gap: 70pt;
+margin-left: 30pt;
+justify-content:space-between;
+
+
+}
+
+#listacategorias {
+font-size: 40pt;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+padding-left: 20pt;
+padding-right: 20pt;
+}
+
+#flechaIzq {
+
+filter: brightness(1.1);
+mix-blend-mode: multiply;
+height: 200px;
+width: 266px;
+
+}
+
+#flechaDer {
+
+filter: brightness(1.1);
+mix-blend-mode: multiply;
+height: 200px;
+width: 266px;
+}
+
+
+}
+
+    </style>
+    <script>
+
+function buscar () {
+
+const articulos = ["Os últimos días de Terranova","Feliz Idade", "Cultura e Política na Galicia do século XX",  "Cráter", "Historia de Galicia", "Cultura e Política na Galicia do século XX", "Historia do mundo contemporáneo", "A Historia"]
+
+let texto = document.getElementById("textoUsuario").value;
+let resultado = document.getElementById("resultadoBusqueda");
+let resultado2 = ""
+
+for (libro of articulos) {
+
+
+if (libro.toLowerCase().indexOf(texto.toLowerCase()) != "-1") {
+    console.log(libro)
+    resultado2 += `<li>${libro}</li>`;
+    resultado.innerHTML = resultado2;
+}
+}
+}
+
+const articulosCarrusel = [{
+
+    titulo: "Os últimos días de Terranova",
+    autor: "Manuel Rivas",
+    editora: "Edición Xerais",
+    imaxe: "novidade1.jpg",
+
+
+
+
+}, {
+    titulo: "Feliz Idade",
+    autor: "Olga Novo",
+    editora: "Edición Xerais",
+    imaxe: "novidade2.jpg",
+
+
+
+
+}, 
+{
+    titulo: "Cultura e Política na Galicia do século XX",
+    autor: "Ramón Villares",
+    editora: "Editorial Galaxia",
+    imaxe: "novidade3.jpg",
+}]
+
+
+
+let posCarrusel1 = 0;
+
+function mostrar() {
+
+document.getElementById("novidade1").src=articulosCarrusel[posCarrusel1].imaxe;
+document.getElementById("tituloNov1").innerHTML=articulosCarrusel[posCarrusel1].titulo;
+document.getElementById("autorNov1").innerHTML=articulosCarrusel[posCarrusel1].autor;
+document.getElementById("editoraNov1").innerHTML=articulosCarrusel[posCarrusel1].editora;
+
+
+}
+
+function cambiarCarrusel(movimiento) {
+    posCarrusel1 = posCarrusel1 + movimiento;
+if (posCarrusel1 == -1) {
+        posCarrusel1 = articulosCarrusel.length-1;
+    }
+
+    if (posCarrusel1 == articulosCarrusel.length) {
+
+        posCarrusel1 = 0
+    }
+    mostrar();
+}
+    </script>
+
+</head>
+<body onload="mostrar()">
+
+
+    <header>
+        <section id="imaxeCabeceira">
+
+        <h1>A miña tenda</h1>
+
+        Onde atopar os libros que máis precisas
+        <br><br>
+        </section>
+
+        <section id="barraNavegacion">
+
+
+
+            <nav class="navbar navbar-dark bg-dark">
+                
+                <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Sobre nós</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">A miña conta</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     Categorías
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Poesía</a></li>
+                      <li><a class="dropdown-item" href="#">Novela</a></li>
+                      <li><a class="dropdown-item" href="#">Ensaio</a></li>
+                      </ul>
+                    <li> <nav class="navbar bg-body-tertiary">
+                        <div class="container-fluid reverse">
+                          <form class="d-flex reverse" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                            <button class="btn btn-outline-success" onclick="buscar()">Buscar</button>
+                </nav>
+</li>
+<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">O meu carro</a>
+                  </li>
+                  
+                 
+                     
+        </section>
+
+    </header>
+
+ 
+
+    
+    <br><br>
+
+    <main id="novidadesMain">
+
+    <h2>Novidades</h2>
+
+    <div id="novidadesDiv">
+        
+   
+        
+    <section id="flecha1">
+
+    <img src="flechaIzq.png" alt="Frecha cara á esquerda" onclick="cambiarCarrusel(-1)" id="flechaIzq">
+           
+    </section>
+
+    <section id="novidade">
+
+        
+        <img src="novidade1.jpg" alt="Novela Os últimos días de Terranova de Manuel Rivas" id="novidade1">
+
+    <ul>            
+        
+        <li>Título: <span id="tituloNov1">Os últimos días de Terranova</span></li>
+        <li>Autor/a: <span id="autorNov1"> Manuel Rivas</span> </li>
+        <li>Editora: <span id="editoraNov1">Edicións Xerais</span> </li>
+
+    </ul>
+
+</section>
+
+    <section id="flecha2">
+
+        <img src="flechaDer.png" alt="Frecha cara á dereita" onclick="cambiarCarrusel(+1)" id="flechaDer">
+
+
+    </section>
+
+    </div>
+
+</main>
+
+    <aside id="categorías">
+
+
+        <ul  id="listacategorias">
+            <li> <a href="">Poesía</a> </li>
+            <li><a href="">Novela</a></li>
+            <li><a href="">Ensaio</a></li>
+
+
+
+
+        </ul>
+    </aside>
+    <aside id="busqueda">
+
+        <form action="" method="get">
+
+
+            <input type="text" id="textoUsuario">
+
+            <input type="button" value="Buscar" id="botonBuscar" onclick="buscar()">
+
+            <div id="resultadoBusqueda"></div>
+
+
+
+        </form>
+
+    </aside>
+    <footer></footer>
+</body>
+</html>
